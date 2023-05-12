@@ -1,15 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+// bootstrap
+import "bootstrap/dist/css/bootstrap.css";
 
 // component
 import UseStateTest from "./components/useStateTest";
 
 function App() {
   return (
-    <div className="App">
-      <UseStateTest/>
-    </div>
-  );
+    <React.Fragment>
+        <UseStateTest/>
+    </React.Fragment>
+  )
 }
 
 export default App;
