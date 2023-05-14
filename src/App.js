@@ -15,6 +15,7 @@ import UseStateTest from "./components/useStateTest";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import FormSubmitted from "./pages/FormSubmitted";
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
 
         {/* Contact Us */}
         <Route path="/contact-us" element={<ContactUs/>}></Route>
+
+        {/* Form submitted */}
+        <Route exact path="/form-submitted" element={<FormSubmitted/>}></Route>
 
       </Routes>
     </Router>
