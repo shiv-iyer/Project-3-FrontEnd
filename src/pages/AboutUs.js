@@ -1,5 +1,6 @@
 // homepage
 
+import React from 'react';
 export default function AboutUs() {
     return (
         <React.Fragment>

@@ -13,12 +13,14 @@ import {Navbar, Container, Nav} from 'react-bootstrap';
 // my own components
 import UseStateTest from "./components/useStateTest";
 import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
     // <Router> defines the area in which any routing can occur
     <Router>
-      {/* NavBar in Router above Routes */}
+      {/* NavBar in Router above Routes: this way, it will remain when different routes are switched between */}
          {/* Create the NavBar for the homepage, expand in full size at the md breakpoint and onwards */}
          <Navbar expand="md" id="main-navbar">
                     <Container>
@@ -32,11 +34,13 @@ function App() {
                               {/* We use Link to avoid any page refreshing*/}
                               <Link className="nav-link" to="/">Home</Link>
                               <Link className="nav-link" to="/test">Test</Link>
+                              <Link className="nav-link" to="/about-us">About Us</Link>
+                              <Link className="nav-link" to="/contact-us">Contact Us</Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                     </Navbar>
-      {/* The routes are the areas in which pages are displayed */}
+      {/* The routes are the areas in which pages are displayed. They match URLs to React components. */}
       <Routes>
         {/* Home route */}
         <Route path="/" element= {
@@ -45,6 +49,12 @@ function App() {
 
         {/* useState test route*/}
         <Route path="/test" element={<UseStateTest/>}/>
+
+        {/* About Us */}
+        <Route path="/about-us" element={<AboutUs/>}/>
+
+        {/* Contact Us */}
+        <Route path="/contact-us" element={<ContactUs/>}></Route>
 
       </Routes>
     </Router>
