@@ -57,7 +57,7 @@ function App() {
         {/* Contact Us */}
         <Route path="/contact-us" element={<ContactUs/>}></Route>
 
-        {/* Form submitted */}
+        {/* Form submitted. TODO: possible <Switch> block */}
         <Route exact path="/form-submitted" element={<FormSubmitted/>}></Route>
 
       </Routes>
