@@ -36,8 +36,11 @@ export default function Cards() {
             {/*  grid to support the map from outside. jsx comments here, anything outside of React.Fragment can be // comments */}
             <Grid container spacing={2}>
                 {cards && Object.keys(cards).length > 0 ? cards.map((c, index) => {
+                        {/* Grid without Grid Items is all clumped together. Grid items to separate each indivudal one */}
                         return (
-                            <PokeCards pokedata={c}/>
+                            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                                <PokeCards pokedata={c}/>
+                            </Grid>
                         )
                     }) : null}
             </Grid>
