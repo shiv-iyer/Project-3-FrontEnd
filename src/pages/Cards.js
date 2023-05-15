@@ -6,6 +6,9 @@ import { BASE_URL } from "../constants/Constant";
 import CardContext from "../contexts/CardContext";
 import PokeCards from "./PokeCards";
 
+// need to use grid here... using grid in PokeCards was not working since the data was already mapped over
+import Grid from "@mui/material/Grid";
+
 export default function Cards() {
 
     // save the cards in the state. will come as array of objects
@@ -30,11 +33,14 @@ export default function Cards() {
     
     return (
         <React.Fragment>
-            {cards && Object.keys(cards).length > 0 ? cards.map((c, index) => {
-                    return (
-                        <PokeCards pokedata={c}/>
-                    )
-                }) : null}
+            {/*  grid to support the map from outside. jsx comments here, anything outside of React.Fragment can be // comments */}
+            <Grid container spacing={2}>
+                {cards && Object.keys(cards).length > 0 ? cards.map((c, index) => {
+                        return (
+                            <PokeCards pokedata={c}/>
+                        )
+                    }) : null}
+            </Grid>
         </React.Fragment>
     )
 }

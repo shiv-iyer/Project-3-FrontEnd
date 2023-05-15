@@ -27,10 +27,6 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 // poke ball icon?!?!
 import pokeBall from "../assets/resources/images/Poké_Ball_icon.png";
 
-// material UI grid: responsiveness and styling
-import Grid from '@mui/material/Grid';
-
-
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -56,66 +52,60 @@ export default function PokeCards(props) {
 
   return (
     <React.Fragment>
-      <Grid container spacing={2}>
-        {/* grid container will */}
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-
-        </Grid>
         <Card sx={{ maxWidth: 345 }}>
-          <CardHeader
-            avatar={
-              // can use the src prop of Avatar to use an icon.
-              <Avatar sx={{ bgcolor: red[500] }} aria-label="pokeball icon" src={pokeBall}>
-              </Avatar>
-            }
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title={pokedata.name}
-            // use a template literal to display the rarity
-            subheader={`Rarity: ${pokedata.rarity}`}
-          />
-          <CardMedia
-            component="img"
-            height="194"
-            image={pokedata.image_url}
-            alt="Pokemon Card Image"
-          />
-          <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              <h5>Flavor Text:</h5>
-              {pokedata.flavor_text}
-            </Typography>
-          </CardContent>
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to cart">
-              <AddShoppingCartIcon/>
-            </IconButton>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </ExpandMore>
-          </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <CardContent>
-              <Typography paragraph>Method:</Typography>
-              <Typography paragraph>
-                Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-                aside for 10 minutes.
-              </Typography>
-            </CardContent>
-          </Collapse>
+              <CardHeader
+                avatar={
+                  // can use the src prop of Avatar to use an icon.
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label="pokeball icon" src={pokeBall}>
+                  </Avatar>
+                }
+                action={
+                  <IconButton aria-label="settings">
+                    <MoreVertIcon />
+                  </IconButton>
+                }
+                title={pokedata.name}
+                // use a template literal to display the rarity
+                subheader={`Rarity: ${pokedata.rarity}`}
+              />
+              <CardMedia
+                component="img"
+                height="194"
+                image={pokedata.image_url}
+                alt="Pokemon Card Image"
+              />
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                  <h5>Flavor Text:</h5>
+                  {pokedata.flavor_text}
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <IconButton aria-label="add to cart">
+                  <AddShoppingCartIcon/>
+                </IconButton>
+                <IconButton aria-label="add to favorites">
+                  <FavoriteIcon />
+                </IconButton>
+                <ExpandMore
+                  expand={expanded}
+                  onClick={handleExpandClick}
+                  aria-expanded={expanded}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </ExpandMore>
+              </CardActions>
+              <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography paragraph>Method:</Typography>
+                  <Typography paragraph>
+                    Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
+                    aside for 10 minutes.
+                  </Typography>
+                </CardContent>
+              </Collapse>
         </Card>
-      </Grid>
     </React.Fragment>
   );
 }
