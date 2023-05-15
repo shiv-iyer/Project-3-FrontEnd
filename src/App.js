@@ -16,6 +16,7 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import FormSubmitted from "./pages/FormSubmitted";
+import Cards from "./pages/Cards";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                             <Nav className="me-auto">
                               {/* We use Link to avoid any page refreshing*/}
                               <Link className="nav-link" to="/">Home</Link>
+                              <Link className="nav-link" to="/cards">Cards</Link>
                               <Link className="nav-link" to="/test">Test</Link>
                               <Link className="nav-link" to="/about-us">About Us</Link>
                               <Link className="nav-link" to="/contact-us">Contact Us</Link>
@@ -59,6 +61,9 @@ function App() {
 
         {/* Form submitted. TODO: possible <Switch> block */}
         <Route exact path="/form-submitted" element={<FormSubmitted/>}></Route>
+
+        {/* cards ... */}
+        <Route path="/cards" element={<Cards/>}></Route>
 
       </Routes>
     </Router>
