@@ -18,6 +18,9 @@ import ContactUs from "./pages/ContactUs";
 import FormSubmitted from "./pages/FormSubmitted";
 import Cards from "./pages/Cards";
 
+//providers
+import CardProvider from './providers/CardProvider';
+
 function App() {
   return (
     // <Router> defines the area in which any routing can occur
@@ -63,7 +66,12 @@ function App() {
         <Route exact path="/form-submitted" element={<FormSubmitted/>}></Route>
 
         {/* cards ... */}
-        <Route path="/cards" element={<Cards/>}></Route>
+       
+        <Route path="/cards" element={
+           <CardProvider>
+        <Cards/>
+        </CardProvider>
+        }></Route>
 
       </Routes>
     </Router>

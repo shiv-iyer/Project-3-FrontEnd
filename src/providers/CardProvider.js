@@ -11,18 +11,23 @@ const URL = "https://3000-shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/
 
 export default function CardProvider(props) {
 
+    // anything db related is asynchronous, always have to async and await
     const cardContexts = {
         // all functions related to cards, like a "data access" layer for cards
-        getCards: () => {
-            // fetch cards from my backend API
-            const response = axios.get(`${URL}/cards`);
+        getCards: async () => {
+            try {
+                // fetch cards from my backend API
+            const response = await axios.get('https://3000-shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/api/cards');
             return response.data;
+            } catch (e) {
+                console.error(e)
+            }
         }
     }
 
     return (
-        // return the provider.
-        <CardContext.Provider>
+        // return the provider. value is cardContexts to pass down the object
+        <CardContext.Provider value={cardContexts}>
             {props.children}
         </CardContext.Provider>
     );
