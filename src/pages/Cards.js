@@ -4,7 +4,7 @@ import axios from 'axios';
 import { BASE_URL } from "../constants/Constant";
 
 import CardContext from "../contexts/CardContext";
-import PokeCards from "./PokeCards";
+import PokeCards from "../components/PokeCard";
 
 // need to use grid here... using grid in PokeCards was not working since the data was already mapped over
 import Grid from "@mui/material/Grid";
