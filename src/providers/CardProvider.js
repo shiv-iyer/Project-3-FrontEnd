@@ -2,6 +2,7 @@
 
 // import context in
 import CardContext from "../contexts/CardContext";
+import { BASE_URL } from "../constants/Constant";
 
 // ahxios to fetch from backend
 import axios from "axios";
@@ -15,14 +16,16 @@ export default function CardProvider(props) {
     const cardContexts = {
         // all functions related to cards, like a "data access" layer for cards
         getCards: async () => {
-            try {
                 // fetch cards from my backend API
-            const response = await axios.get('https://3000-shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/api/cards');
+            const response = await axios.get(BASE_URL +'api/cards');
+          
             return response.data;
-            } catch (e) {
-                console.error(e)
-            }
-        }
+            
+        },
+        // crud for cart (mostly axios.post), (userid)
+        // setLoginState : (toggle) => {
+        //     setLoginStatus(toggle)
+        // }
     }
 
     return (
