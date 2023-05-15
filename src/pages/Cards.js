@@ -30,13 +30,6 @@ export default function Cards() {
     
     return (
         <React.Fragment>
-            <ul>
-                {cards && Object.keys(cards).length > 0 ? cards.map((c, index) => {
-                    return (
-                        <li key={index}>{c.name}</li>
-                    )
-                }) : null}
-            </ul>
             {cards && Object.keys(cards).length > 0 ? cards.map((c, index) => {
                     return (
                         <PokeCards pokedata={c}/>
