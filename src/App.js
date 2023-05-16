@@ -18,6 +18,7 @@ import ContactUs from "./pages/ContactUs";
 import FormSubmitted from "./pages/FormSubmitted";
 import Cards from "./pages/Cards";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 //providers
 import CardProvider from "./providers/CardProvider";
@@ -59,6 +60,9 @@ function App() {
                 <Link className="nav-link" to="/login">
                   <Button>Login</Button>
                 </Link>
+                <Link className="nav-link" to="/register">
+                  <Button>Register</Button>
+                </Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -91,6 +95,13 @@ function App() {
             <Route path="/login" element={
               <Login/>
             }></Route>
+
+          {/* register */}
+            <Route path="/register" element={
+              <Register/>
+            }>
+            </Route>
+
         </Routes>
       </UserProvider>
     </Router>

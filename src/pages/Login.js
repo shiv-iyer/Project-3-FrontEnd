@@ -1,13 +1,20 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+
+import {Button} from "react-bootstrap";
+
+// import context to use the functions from user provider
+import UserContext from "../contexts/UserContext";
 
 export default function Login() {
+
+    const context = useContext(UserContext);
 
     // massive state by wrapping an object within useState
     const [formState, setFormState] = useState({
         // initialize as empty string
         email: "",
         password: ""
-    })
+    });
 
     const updateFormField = (event) => {
         setFormState({
@@ -15,7 +22,17 @@ export default function Login() {
             ...formState,
             [event.target.name]: event.target.value
          })
-    }
+    };
+
+    // function to submit and post the request via context
+    const submitForm = async () => {
+        console.log(formState);
+        // match the object to the object being received in userLogin
+        const response = await context.userLogin({
+            "email": formState.email,
+            "password": formState.password
+        });
+    };
 
     return (
         <React.Fragment>
@@ -38,6 +55,7 @@ export default function Login() {
                  onChange={updateFormField}
                  />
             </div>
+            <Button onClick={submitForm}>Submit</Button>
         </React.Fragment>
     )
 }
