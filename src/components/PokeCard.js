@@ -115,8 +115,10 @@ export default function PokeCards(props) {
               Card Condition: {pokedata.condition}
             </Typography>
             <Typography paragraph>
-              Type: *WIP*
-              {/* figure out functionality for dual type coverage later*/}
+              {/* use ternary operator to display type or types depending on whether there are more than 1. */}
+              {pokedata.type.length > 1 ? "Types: " : "Type: "}
+              {/* map through the type object to extract each individual type, and then display them */}
+              {pokedata.type.map(t => t.type).join(", ")}
             </Typography>
             <Typography paragraph>
               Expansion: {pokedata.expansion.name}
