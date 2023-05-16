@@ -10,13 +10,14 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 // react-bootstrap components
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 
-// my own components
+// my own components / pages
 import UseStateTest from "./components/useStateTest";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import FormSubmitted from "./pages/FormSubmitted";
 import Cards from "./pages/Cards";
+import Login from "./pages/Login";
 
 //providers
 import CardProvider from "./providers/CardProvider";
@@ -55,6 +56,9 @@ function App() {
                 <Link className="nav-link" to="/contact-us">
                   Contact Us
                 </Link>
+                <Link className="nav-link" to="/login">
+                  <Button>Login</Button>
+                </Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -81,6 +85,11 @@ function App() {
               <CardProvider>
                   <Cards />
               </CardProvider>
+            }></Route>
+
+          {/* user login*/}
+            <Route path="/login" element={
+              <Login/>
             }></Route>
         </Routes>
       </UserProvider>
