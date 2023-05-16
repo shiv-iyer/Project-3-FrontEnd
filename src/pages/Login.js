@@ -2,6 +2,8 @@ import React, {useState, useContext} from "react";
 
 import {Button} from "react-bootstrap";
 
+import axios from "axios";
+
 // import context to use the functions from user provider
 import UserContext from "../contexts/UserContext";
 
@@ -28,10 +30,12 @@ export default function Login() {
     const submitForm = async () => {
         console.log(formState);
         // match the object to the object being received in userLogin
-        const response = await context.userLogin({
-            "email": formState.email,
-            "password": formState.password
-        });
+        // const response = await context.userLogin({
+        //     "email": formState.email,
+        //     "password": formState.password
+        // });
+        const response = await axios.post(`https://shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/api/users/login`, formState);
+        console.log(response);
     };
 
     return (

@@ -24,7 +24,16 @@ export default function UserProvider(props) {
             console.log(response);
 
             return response.data;
+        },
+
+        // user register
+        userRegister: async (userData) => {
+            const response = await axios.post(`${BASE_URL}/users/register`, userData);
+            console.log (response);
+            return response.data
         }
+
+        // all gets are working, but post is not working
     };
 
     return (

@@ -6,6 +6,8 @@ import UserContext from "../contexts/UserContext";
 
 export default function Register () {
 
+    const context = useContext(UserContext);
+
     // massive state by wrapping an object within useState
     const [formState, setFormState] = useState({
         // initialize all empty string
@@ -26,7 +28,16 @@ export default function Register () {
     };
 
     const submitForm = async () => {
-        alert("hi");
+        const response = await context.userRegister(formState);
+
+        console.log(response);
+
+        console.log(formState);
+            // match the object to the object being received in userLogin
+            // const response = await context.userLogin({
+            //     "email": formState.email,
+            //     "password": formState.password
+            // });
     }
 
     return (
