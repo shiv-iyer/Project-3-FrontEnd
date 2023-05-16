@@ -7,9 +7,6 @@ import { BASE_URL } from "../constants/Constant";
 // ahxios to fetch from backend
 import axios from "axios";
 
-// my backend url, later change to deployed url
-const URL = "https://3000-shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/API";
-
 export default function CardProvider(props) {
 
     // anything db related is asynchronous, always have to async and await
@@ -17,7 +14,8 @@ export default function CardProvider(props) {
         // all functions related to cards, like a "data access" layer for cards
         getCards: async () => {
                 // fetch cards from my backend API
-            const response = await axios.get(BASE_URL +'api/cards');
+            //const response = await axios.get(BASE_URL +'api/cards');
+            const response = await axios.get(`${BASE_URL}/cards`);
           
             return response.data;
             
