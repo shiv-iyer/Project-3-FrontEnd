@@ -27,6 +27,9 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 // poke ball icon?!?!
 import pokeBall from "../assets/resources/images/Poké_Ball_icon.png";
 
+// stylesheet
+import "../assets/styles/componentstyles.css";
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -79,13 +82,14 @@ export default function PokeCards(props) {
           alt="Pokemon Card Image"
         />
         <CardContent>
-          <Typography variant="h6" color="text.secondary" mb={1}>
-            Card Cost: ${pokedata.cost}
+          <Typography variant="h5" color="text.secondary" mb={1}>
+            {/* I can use spans to style inline elements  individiaully. */}
+            Card Cost: <span className="cost-text">${pokedata.cost}</span>
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {/* refactored the warning above: change the variant. i'll figure a diff one out for this though */}
             <h5>Flavor Text:</h5>
-            {pokedata.flavor_text}
+              <span className="flavor-text">"{pokedata.flavor_text}"</span>
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
