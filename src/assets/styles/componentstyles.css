@@ -3,7 +3,21 @@
     color: #03C04A;
 }
 
+.cost-holder {
+    background-color: rgba(235, 236, 240, 0.4);
+    border: 1.5px solid black;
+}
+
 /* font styles: italic, many more */
 .flavor-text {
     font-style: italic;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.card-content {
+    /* WIP for border and stuff. */
+    /* border: 2px solid black; */
 }

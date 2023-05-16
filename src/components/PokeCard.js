@@ -81,12 +81,12 @@ export default function PokeCards(props) {
           image={pokedata.image_url}
           alt="Pokemon Card Image"
         />
-        <CardContent>
-          <Typography variant="h5" color="text.secondary" mb={1}>
+        <CardContent className="card-content">
+          <Typography variant="h5" color="text.secondary" mb={1} className="centered-text cost-holder">
             {/* I can use spans to style inline elements  individiaully. */}
             Card Cost: <span className="cost-text">${pokedata.cost}</span>
           </Typography>
-          <Typography variant="h5" color="text.secondary">
+          <Typography variant="h6" color="text.secondary">
             Flavor Text:
             {/* typography within typography to maintain the flavor text sizing while fixing h5 react validateDOMNesting */}
             <Typography variant="body2" mt={1}>
