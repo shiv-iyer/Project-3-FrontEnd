@@ -86,10 +86,12 @@ export default function PokeCards(props) {
             {/* I can use spans to style inline elements  individiaully. */}
             Card Cost: <span className="cost-text">${pokedata.cost}</span>
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {/* refactored the warning above: change the variant. i'll figure a diff one out for this though */}
-            <h5>Flavor Text:</h5>
+          <Typography variant="h5" color="text.secondary">
+            Flavor Text:
+            {/* typography within typography to maintain the flavor text sizing while fixing h5 react validateDOMNesting */}
+            <Typography variant="body2" mt={1}>
               <span className="flavor-text">"{pokedata.flavor_text}"</span>
+            </Typography>
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
