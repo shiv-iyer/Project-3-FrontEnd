@@ -20,10 +20,15 @@ export default function CardProvider(props) {
             return response.data;
             
         },
-        // crud for cart (mostly axios.post), (userid)
-        // setLoginState : (toggle) => {
-        //     setLoginStatus(toggle)
-        // }
+        addCardToCart: async (data) => {
+            // post request
+            const response = await axios.post(`${BASE_URL}/carts/add`, data);
+
+            console.log(response);
+            return response.data;
+
+        }
+
     }
 
     return (

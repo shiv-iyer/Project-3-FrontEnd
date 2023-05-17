@@ -1,7 +1,4 @@
-// login
-// register ( localstorage )
-// profile
-// get orders by profile id
+// user provider has functionality for users and for cart functionality
 
 import UserContext from "../contexts/UserContext";
 import { BASE_URL } from "../constants/Constant";
@@ -37,6 +34,22 @@ export default function UserProvider(props) {
             const response = await axios.post(`${BASE_URL}/users/register`, userData);
             console.log (response);
             return response.data
+        },
+
+        getCart: async (userID) => {
+            const response = await axios.get(`${BASE_URL}/carts/${userID}`);
+
+            console.log(response);
+            return response.data;
+        },
+
+        removeCardFromCart: async (data) => {
+            // post req again
+            // body requires user id and card id
+            const response = await axios.post(`${BASE_URL}/carts/delete`, data);
+
+            console.log(response);
+            return response.data;
         }
 
         // all gets are working, but post is not working

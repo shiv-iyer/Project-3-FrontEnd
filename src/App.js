@@ -64,6 +64,9 @@ function App() {
                 <Link className="nav-link" to="/register">
                   <Button>Register</Button>
                 </Link>
+                <Link className="nav-link" to="/cart">
+                  <Button>Cart</Button>
+                </Link>
               </Nav>
             </Navbar.Collapse>
           </Container>

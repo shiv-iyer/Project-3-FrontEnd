@@ -3,6 +3,12 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 
+// hooks
+import {useContext, useState} from "react";
+
+// jwtdecode
+import jwtDecode from "jwt-decode";
+
 // material UI card components
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -30,6 +36,9 @@ import pokeBall from "../assets/resources/images/Poké_Ball_icon.png";
 // stylesheet
 import "../assets/styles/componentstyles.css";
 
+// user context
+import CardContext from "../contexts/CardContext";
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -45,13 +54,37 @@ export default function PokeCards(props) {
   const [expanded, setExpanded] = React.useState(false);
   const { pokedata } = props;
 
+  // context
+  const context = useContext(CardContext);
+
+  // state for user
+  const [userID, setUserID] = useState("");
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  const addToCart = (cardName) => {
+  const addToCart = async (cardName) => {
     alert("Card " + cardName + " has been added to your shopping cart!");
     console.log(pokedata);
+
+    // retrieve token from local storage
+    const token = localStorage.getItem("accessToken");
+
+    if (token){
+      // decode the token if it's there
+      setUserID(jwtDecode(token).id);
+    }
+
+    // match the data to req.body in backend
+    const data = {
+      userID: userID,
+      cardID: pokedata.id,
+      quantity: 1
+    }
+
+    // api call
+    const response = await context.addCardToCart(data);
   };
 
   return (
