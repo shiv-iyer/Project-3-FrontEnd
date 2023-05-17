@@ -58,6 +58,12 @@ export default function UserProvider(props) {
             
             console.log(response);
             return response.data;
+        },
+        getUserCart: async (userID) => {
+            const response = await axios.get(`${BASE_URL}/orders/${userID}`);
+
+            console.log(response);
+            return response.data;
         }
 
         // all gets are working, but post is not working

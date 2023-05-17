@@ -20,6 +20,7 @@ import Cards from "./pages/Cards";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
+import Profile from "./pages/Profile";
 
 //providers
 import CardProvider from "./providers/CardProvider";
@@ -63,6 +64,9 @@ function App() {
                 </Link>
                 <Link className="nav-link" to="/register">
                   <Button>Register</Button>
+                </Link>
+                <Link className="nav-link" to="/profile">
+                  <Button>Profile</Button>
                 </Link>
                 <Link className="nav-link" to="/cart">
                   <Button>Cart</Button>
@@ -109,6 +113,11 @@ function App() {
             {/* cart */}
             <Route path="/cart" element={
               <Cart/>
+            }></Route>
+
+            {/* profile */}
+            <Route path="/profile" element={
+              <Profile/>
             }></Route>
 
         </Routes>
