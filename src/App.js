@@ -19,6 +19,7 @@ import FormSubmitted from "./pages/FormSubmitted";
 import Cards from "./pages/Cards";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Cart from "./pages/Cart";
 
 //providers
 import CardProvider from "./providers/CardProvider";
@@ -101,6 +102,11 @@ function App() {
               <Register/>
             }>
             </Route>
+
+            {/* cart */}
+            <Route path="/cart" element={
+              <Cart/>
+            }></Route>
 
         </Routes>
       </UserProvider>

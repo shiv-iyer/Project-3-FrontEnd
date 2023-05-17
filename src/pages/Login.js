@@ -31,13 +31,8 @@ export default function Login() {
     // function to submit and post the request via context
     const submitForm = async () => {
         console.log(formState);
-        // match the object to the object being received in userLogin
-        // const response = await context.userLogin({
-        //     "email": formState.email,
-        //     "password": formState.password
-        // });
-        //const response = await axios.post(`https://shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/api/users/login`, formState);
-        const response = await axios.post(`${BASE_URL}/users/login`, formState);
+        const response = await context.userLogin(formState);
+        // const response = await axios.post(`${BASE_URL}/users/login`, formState);
         console.log(response);
     };
 

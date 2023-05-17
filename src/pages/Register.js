@@ -43,59 +43,61 @@ export default function Register () {
     return (
         <React.Fragment>
             <h1>Register</h1>
-            <div>
-                <label>First Name</label>
-                <input
+            <div className="form-group">
+                <div>
+                    <label>First Name</label>
+                    <input
+                        type="text"
+                        name="first_name"
+                        value={formState.first_name}
+                        onChange={updateFormField}
+                        />
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input
                     type="text"
-                    name="first_name"
-                    value={formState.first_name}
+                    name="last_name"
+                    value={formState.last_name}
                     onChange={updateFormField}
                     />
-            </div>
-            <div>
-                <label>Last Name</label>
-                <input
-                 type="text"
-                 name="last_name"
-                 value={formState.last_name}
-                 onChange={updateFormField}
-                 />
-            </div>
-            <div>
-                <label>Username</label>
-                <input
-                    type="text"
-                    name="username"
-                    value={formState.username}
-                    onChange={updateFormField}
-                    />
-            </div>
-            <div>
-                <label>Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    value={formState.password}
-                    onChange={updateFormField}
-                    />
-            </div>
-            <div>
-                <label>Email</label>
-                <input
-                    type="text"
-                    name="email"
-                    value={formState.email}
-                    onChange={updateFormField}
-                    />
-            </div>
-            <div>
-                <label>Contact Number</label>
-                <input
-                    type="text"
-                    name="contact_number"
-                    value={formState.contact_number}
-                    onChange={updateFormField}
-                    />
+                </div>
+                <div>
+                    <label>Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        value={formState.username}
+                        onChange={updateFormField}
+                        />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={formState.password}
+                        onChange={updateFormField}
+                        />
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input
+                        type="text"
+                        name="email"
+                        value={formState.email}
+                        onChange={updateFormField}
+                        />
+                </div>
+                <div>
+                    <label>Contact Number</label>
+                    <input
+                        type="text"
+                        name="contact_number"
+                        value={formState.contact_number}
+                        onChange={updateFormField}
+                        />
+                </div>
             </div>
 
             <Button onClick={submitForm}>Submit</Button>
