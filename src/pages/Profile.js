@@ -59,7 +59,7 @@ export default function Profile() {
                         <td>{order.payment_type}</td>
                     </tr>
                 );
-            }) : "bitch"}
+            }) : "hi"}
         </tbody>
       </table>
     </React.Fragment>
