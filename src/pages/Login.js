@@ -2,6 +2,8 @@ import React, {useState, useContext} from "react";
 
 import {Button} from "react-bootstrap";
 
+import { BASE_URL } from "../constants/Constant";
+
 import axios from "axios";
 
 // import context to use the functions from user provider
@@ -34,7 +36,8 @@ export default function Login() {
         //     "email": formState.email,
         //     "password": formState.password
         // });
-        const response = await axios.post(`https://shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/api/users/login`, formState);
+        //const response = await axios.post(`https://shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/api/users/login`, formState);
+        const response = await axios.post(`${BASE_URL}/users/login`, formState);
         console.log(response);
     };
 
