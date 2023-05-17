@@ -50,6 +50,14 @@ export default function UserProvider(props) {
 
             console.log(response);
             return response.data;
+        },
+
+        updateCardInCart: async (data) => {
+            // match. don't even need to comment again
+            const response = await axios.post(`${BASE_URL}/carts/update`, data);
+            
+            console.log(response);
+            return response.data;
         }
 
         // all gets are working, but post is not working

@@ -30,6 +30,7 @@ export default function Login() {
 
     // function to submit and post the request via context
     const submitForm = async () => {
+        alert("you have logged in hf");
         console.log(formState);
         const response = await context.userLogin(formState);
         // const response = await axios.post(`${BASE_URL}/users/login`, formState);
