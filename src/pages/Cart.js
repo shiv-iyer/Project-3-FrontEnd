@@ -49,7 +49,7 @@ export default function Cart() {
   let URL;
 
   if (userID) {
-    URL = `https://3000-shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/checkout/${userID}/checkout`
+    URL = `https://shiv-pokeport-final-express.onrender.com/checkout/${userID}/checkout`
   }
 
   // remove from cart
