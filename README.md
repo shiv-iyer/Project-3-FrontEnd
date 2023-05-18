@@ -86,6 +86,6 @@ Some possible features I would like to implement in the future are:
 
 - Bulbapedia, TCGPlayer, and other related websites for Pokémon card information and artwork
 - [Poke Ball Icon](https://en.wikipedia.org/wiki/File:Pok%C3%A9_Ball_icon.svg)
-- [Chat GPT](https://openai.com/blog/chatgpt): utilized for learning
+- [Chat GPT](https://openai.com/blog/chatgpt): utilized for learning. It is a powerful tool that can accomplish a lot, but I tried not to use it too often.
 
 Thank you so much to my lecturer, Paul, my friend, Isaac, as well as my classmates for help, guidance and support throughout this project.
