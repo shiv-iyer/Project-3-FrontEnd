@@ -6,7 +6,7 @@ Live link to demo: [Poké Port](https://poke-port.netlify.app/)
 
 Welcome to PokePort, a one-stop destination for all your Pokémon card needs! We've created this unique online platform with one clear mission in mind - to make buying Pokémon cards as easy, fun, and accessible as possible for enthusiasts worldwide.
 
-This website was created by someone who loves Pokémon from the bottom of his heart.
+This project was created by someone who loves Pokémon from the bottom of his heart. There is quite a significant amount of BackEnd functionality in this project.
 
 ## Target Audience & User Goals
 
@@ -20,7 +20,7 @@ A seasoned collector is seeking to purchase a highly sought-after limited editio
 
 ## UI/UX Elements
 
-I have tried to style the website to fit the Pokémon (or a Pokéball) theme, being red, black and white.
+I have tried to style the FrontEnd website to fit the Pokémon (or a Pokéball) theme, being red, black and white.
 
 My SQL database was meticulously planned for, and the reflection of that planning can be found in my ERD Diagram and Logical Schema diagram.
 
