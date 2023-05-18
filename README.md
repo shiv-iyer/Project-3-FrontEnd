@@ -6,13 +6,15 @@ Live link to demo: [Poké Port](https://poke-port.netlify.app/)
 
 Welcome to PokePort, a one-stop destination for all your Pokémon card needs! We've created this unique online platform with one clear mission in mind - to make buying Pokémon cards as easy, fun, and accessible as possible for enthusiasts worldwide.
 
+This website was created by someone who loves Pokémon from the bottom of his heart.
+
 ## Target Audience & User Goals
 
 ### User Stories and Pain Points
 
 A Pokémon card enthusiast lives in a remote area with no access to local game shops. PokePort allows him to explore a vast catalogue of cards and purchase them conveniently from the comfort of his home.
 
-A mother wants to surprise her child with a rare Pokémon card for his birthday but has no idea where to start. PokePort's user-friendly interface and comprehensive search functions enable her to find the perfect card, and the community section helps her understand the value and significance of the card she is buying.
+A mother wants to surprise her child with a rare Pokémon card for his birthday but has no idea where to start. PokePort's user-friendly interface and comprehensive search functions enable her to find the perfect card.
 
 A seasoned collector is seeking to purchase a highly sought-after limited edition card. With PokePort's robust security measures, he can make his purchase with confidence, knowing that the card is authentic and his transaction is secure.
 
