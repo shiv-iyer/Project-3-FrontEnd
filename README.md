@@ -6,9 +6,9 @@ Live link to demo: [Poké Port](https://poke-port.netlify.app/)
 
 Welcome to PokePort, a one-stop destination for all your Pokémon card needs! We've created this unique online platform with one clear mission in mind - to make buying Pokémon cards as easy, fun, and accessible as possible for enthusiasts worldwide.
 
-### Target Audience & User Goals
+## Target Audience & User Goals
 
-## User Stories and Pain Points
+### User Stories and Pain Points
 
 A Pokémon card enthusiast lives in a remote area with no access to local game shops. PokePort allows him to explore a vast catalogue of cards and purchase them conveniently from the comfort of his home.
 
@@ -17,6 +17,8 @@ A mother wants to surprise her child with a rare Pokémon card for his birthday 
 A seasoned collector is seeking to purchase a highly sought-after limited edition card. With PokePort's robust security measures, he can make his purchase with confidence, knowing that the card is authentic and his transaction is secure.
 
 ## UI/UX Elements
+
+I have tried to style the website to fit the Pokémon (or a Pokéball) theme, being red, black and white.
 
 My SQL database was meticulously planned for, and the reflection of that planning can be found in my ERD Diagram and Logical Schema diagram.
 
@@ -52,14 +54,20 @@ Some possible features I would like to implement in the future are:
 
 ## Tech Stack
 
-- **FrontEnd**:
+- **FrontEnd**: HTML, CSS, JavaScript, Bootstrap, React, React-Bootstrap, Material UI, Axios, JWT-Decode
 
-- **BackEnd**: 
+- **BackEnd**: **Node.js with Express**, JSON Web Token (User Authentication), CORS (Cross-Origin Resource Sharing), Bookshelf (ORM Library to connect with databases), Knex (SQL Query Builder), Cloudinary (upload images), Caolan Forms (BackEnd forms), Handlebars (View Engine)
 
 --- 
 
 ## Testing
-
+| Test Case | Description |
+| ----------- | ----------- |
+| Website Exists | Go to the website as per the live demo link above |
+| User Login (FrontEnd) | Click on Login/Logout and use the test account (email: dog@dog.com, password: dog), then it should redirect to the user profile, and all features should be dependent on whether the user is logged in or not |
+| User Login (BackEnd) | Click on Login/Logout and use the test account (email: dog@dog.com, password: dog). All features should be dependent on whether the user is logged in or not |
+| Checkout | Be logged in, click cart, click checkout, Stripe |
+- 
 
 ---
 
