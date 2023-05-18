@@ -56,7 +56,7 @@ Some possible features I would like to implement in the future are:
 
 - **FrontEnd**: HTML, CSS, JavaScript, Bootstrap, React, React-Bootstrap, Material UI, Axios, JWT-Decode
 
-- **BackEnd**: **Node.js with Express**, JSON Web Token (User Authentication), CORS (Cross-Origin Resource Sharing), Bookshelf (ORM Library to connect with databases), Knex (SQL Query Builder), Cloudinary (upload images), Caolan Forms (BackEnd forms), Handlebars (View Engine)
+- **BackEnd**: Node.js with Express, JSON Web Token (User Authentication), CORS (Cross-Origin Resource Sharing), Bookshelf (ORM Library to connect with databases), Knex (SQL Query Builder), Cloudinary (upload images), Caolan Forms (BackEnd forms), Handlebars (View Engine)
 
 --- 
 
@@ -67,7 +67,6 @@ Some possible features I would like to implement in the future are:
 | User Login (FrontEnd) | Click on Login/Logout and use the test account (email: dog@dog.com, password: dog), then it should redirect to the user profile, and all features should be dependent on whether the user is logged in or not |
 | User Login (BackEnd) | Click on Login/Logout and use the test account (email: dog@dog.com, password: dog). All features should be dependent on whether the user is logged in or not |
 | Checkout | Be logged in, click cart, click checkout, Stripe |
-- 
 
 ---
 
