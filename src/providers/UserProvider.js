@@ -55,9 +55,31 @@ export default function UserProvider(props) {
 
             console.log(response);
             return response.data;
-        }
+        },
 
-        // all gets are working, but post is not working
+        // logout 
+        userLogout: async (data) => {
+            const refreshToken = localStorage.getItem("refreshToken")
+            if (refreshToken) {
+                const response = await axios.post(`${BASE_URL}/users/logout`, {
+                    // second param is refresh token
+                    "refreshToken": localStorage.getItem("refreshToken")
+                });
+                return response.data.message
+            } else {
+                return false;
+            }
+
+        },
+
+        checkIfUserLoggedIn : () => {
+            const token = localStorage.getItem("accessToken");
+            if (token) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     };
 
     return (

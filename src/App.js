@@ -25,6 +25,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
+import Logout from "./pages/Logout";
 
 //providers
 import CardProvider from "./providers/CardProvider";
@@ -37,10 +38,13 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("accessToken");
 
+    // conditional rendering checks userID, so set it to null if no token in local storage
     if (token) {
       setUserID(jwtDecode(token).id);
+    } else {
+      setUserID(null)
     }
-  }, []);
+  }, [userID]);
   
 
   // refer to fun fact below
@@ -156,6 +160,12 @@ function App() {
             <Route path="/profile" element={
               <Profile/>
             }></Route>
+
+            {/* logout */}
+            <Route path="/logout" element={
+              <Logout/>
+            }>
+            </Route>
 
         </Routes>
       </UserProvider>

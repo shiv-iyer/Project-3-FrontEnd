@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
 
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import UserContext from "../contexts/UserContext";
 
 export default function Register() {
   const context = useContext(UserContext);
+  const navigate = useNavigate();
 
   // massive state by wrapping an object within useState
   const [formState, setFormState] = useState({
     // initialize all empty string
+    // null instead
     first_name: "",
     last_name: "",
     username: "",
@@ -27,16 +30,35 @@ export default function Register() {
   };
 
   const submitForm = async () => {
+    
+    // response from context
     const response = await context.userRegister(formState);
 
-    console.log(response);
-
-    console.log(formState);
-    // match the object to the object being received in userLogin
-    // const response = await context.userLogin({
-    //     "email": formState.email,
-    //     "password": formState.password
-    // });
+    // if the response isn't the incorrect one, submit the form and register
+    if (response !== 'you need to fill in the form properly') {
+      alert("You have successfully registered! :D");
+      setFormState({
+        first_name: "",
+        last_name: "",
+        username: "",
+        email: "",
+        password: "",
+        contact_number: "",
+      })
+      navigate('/login');
+    } else {
+      // else don't go through and clear fields for a new input
+      setFormState({
+        first_name: "",
+        last_name: "",
+        username: "",
+        email: "",
+        password: "",
+        contact_number: "",
+      });
+      alert("Please enter data into all fields");
+    }
+   
   };
 
   return (
