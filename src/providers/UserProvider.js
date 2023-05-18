@@ -76,5 +76,4 @@ export default function UserProvider(props) {
     );
 }
 
-
 // <a href={checkout url from backend}> Checkout button</a>

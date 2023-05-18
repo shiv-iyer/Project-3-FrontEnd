@@ -21,3 +21,8 @@
     /* WIP for border and stuff. */
     /* border: 2px solid black; */
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+}

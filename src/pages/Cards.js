@@ -6,6 +6,8 @@ import { BASE_URL } from "../constants/Constant";
 import CardContext from "../contexts/CardContext";
 import PokeCards from "../components/PokeCard";
 
+import {Button} from "react-bootstrap";
+
 // need to use grid here... using grid in PokeCards was not working since the data was already mapped over
 import Grid from "@mui/material/Grid";
 
@@ -13,6 +15,17 @@ export default function Cards() {
 
     // save the cards in the state. will come as array of objects
     const [cards, setCards] = useState([]);
+
+    const [filter, setFilter] = useState({
+        search: "",
+    });
+
+    const updateFormField = (e) => {
+        setFilter({
+            ...filter,
+            [e.target.name] : e.target.value
+        });
+    }
 
     // get the context?
     let context = useContext(CardContext);
@@ -33,6 +46,14 @@ export default function Cards() {
     
     return (
         <React.Fragment>
+
+            {/* search bar for filter. 1. input type = search, 2. button to apply search, 3. button to clear search */}
+            <div className="search-container">
+                <input type="text" value={filter.search} onChange={updateFormField} name="search"/>
+                <Button>Search</Button>
+                <Button variant="danger">Clear</Button>
+            </div>
+
             {/*  grid to support the map from outside. jsx comments here, anything outside of React.Fragment can be // comments */}
             <Grid container spacing={2}>
                 {cards && Object.keys(cards).length > 0 ? cards.map((c, index) => {
