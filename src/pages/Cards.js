@@ -72,9 +72,9 @@ export default function Cards() {
 
             {/* search bar for filter. 1. input type = search, 2. button to apply search, 3. button to clear search */}
             <div className="search-container">
-                <input type="text" value={filter.search} onChange={updateFormField} name="search"/>
-                <Button onClick={applyFilter}>Search</Button>
-                <Button variant="danger" onClick={resetFilter}>Clear</Button>
+                <input type="text" value={filter.search} onChange={updateFormField} name="search" className="search-item"/>
+                <Button onClick={applyFilter} className="search-item">Search</Button>
+                <Button variant="danger" onClick={resetFilter} className="search-item">Clear</Button>
             </div>
 
             {/*  grid to support the map from outside. jsx comments here, anything outside of React.Fragment can be // comments */}
