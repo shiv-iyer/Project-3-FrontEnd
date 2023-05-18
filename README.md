@@ -1,6 +1,7 @@
 # Poké Port
 
-Live link to demo: [Poké Port](https://poke-port.netlify.app/)
+Live link to BackEnd demo: [Poké Port Admin Dashboard](https://shiv-pokeport-final-express.onrender.com/cards)
+Live link to FrontEnd demo: [Poké Port](https://poke-port.netlify.app/)
 
 ## Project Summary
 
