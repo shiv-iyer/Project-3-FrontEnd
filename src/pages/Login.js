@@ -39,26 +39,30 @@ export default function Login() {
 
     return (
         <React.Fragment>
-            <h1>Login</h1>
-            <div>
-                <label>Email</label>
-                <input
-                    type="text"
-                    name="email"
-                    value={formState.email}
-                    onChange={updateFormField}
-                    />
+            <h1 className="page-heading">Login</h1>
+            <div className="container">
+                <div className="form-group">
+                    <div className="form-item">
+                        <label>Email</label>
+                        <input
+                            type="text"
+                            name="email"
+                            value={formState.email}
+                            onChange={updateFormField}
+                            />
+                    </div>
+                    <div className="form-item">
+                        <label>Password</label>
+                        <input
+                        type="password"
+                        name="password"
+                        value={formState.password}
+                        onChange={updateFormField}
+                        />
+                    </div>
+                </div>
             </div>
-            <div>
-                <label>Password</label>
-                <input
-                 type="password"
-                 name="password"
-                 value={formState.password}
-                 onChange={updateFormField}
-                 />
-            </div>
-            <Button onClick={submitForm}>Submit</Button>
+            <Button onClick={submitForm} className="submit-button">Submit</Button>
         </React.Fragment>
     )
 }
