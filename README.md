@@ -47,6 +47,10 @@ My SQL database was meticulously planned for, and the reflection of that plannin
 
 ## Limitations and Future Implementations
 
+Immediate areas for concern (fix now):
+- clean up front end home pages (super basic)
+- i will delete this when i'm done with it it is easy to do i will doi tnow.
+
 Some possible features I would like to implement in the future are:
 - Trading system: trade with others
 - Favorites collection: players can save their favorite cards

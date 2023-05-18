@@ -15,7 +15,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 
 // my own components / pages
-import UseStateTest from "./components/useStateTest";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
@@ -84,15 +83,13 @@ function App() {
                 <Link className="nav-link" to="/cards">
                   Cards
                 </Link>
-                <Link className="nav-link" to="/test">
-                  Test
-                </Link>
                 <Link className="nav-link" to="/about-us">
                   About Us
                 </Link>
-                <Link className="nav-link" to="/contact-us">
+                {/* not right now, maybe later
+                 <Link className="nav-link" to="/contact-us">
                   Contact Us
-                </Link>
+                </Link> */}
                 {/* when the rendering is conditional */}
                 {userID && userID !== undefined ? 
                                <Link className="nav-link" to="/logout">
@@ -120,9 +117,6 @@ function App() {
         <Routes>
           {/* Home route */}
           <Route path="/" element={<Home />} />
-
-          {/* useState test route*/}
-          <Route path="/test" element={<UseStateTest />} />
 
           {/* About Us */}
           <Route path="/about-us" element={<AboutUs />} />

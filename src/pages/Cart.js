@@ -5,7 +5,7 @@ import jwtDecode from "jwt-decode";
 // import context to use the functions from user provider
 import UserContext from "../contexts/UserContext";
 
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 
 import { useNavigate } from "react-router-dom";
 
@@ -124,35 +124,41 @@ const removeQuantity = async (cardID) => {
 
   return (
     <React.Fragment>
-      <h1>Cart</h1>
-      {cartItems && cartItems.length > 0
-        ? cartItems.map((item) => {
-            return (
-              <React.Fragment key={item.card_id}>
-                <h1>Name: {item.card.name}</h1>
-                <Button
-                  onClick={() => {
-                    removeFromCart(item.card_id);
-                  }}
-                >
-                  Remove From Cart
-                </Button>
-                <Button
-                  onClick={() => {
-                    addQuantity(item.card_id);
-                  }}
-                >
-                  +
-                </Button>
-                <input type="text" value={item.quantity}></input>
-                <Button onClick={() => {
-                    removeQuantity(item.card_id);
-                }}>-</Button>
-              </React.Fragment>
-            );
-          })
-        : "bye"}
-        <Button variant="success" href={URL}>Checkout</Button>
+      <Container className="page-container">
+        <div className="header">
+          <h1>Cart</h1>
+        </div>
+        <div className="cart-display my-2">
+          {cartItems && cartItems.length > 0
+            ? cartItems.map((item) => {
+                return (
+                  <React.Fragment key={item.card_id}>
+                    <h1>Name: {item.card.name}</h1>
+                    <Button
+                      onClick={() => {
+                        removeFromCart(item.card_id);
+                      }}
+                    >
+                      Remove From Cart
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        addQuantity(item.card_id);
+                      }}
+                    >
+                      +
+                    </Button>
+                    <input type="text" value={item.quantity}></input>
+                    <Button onClick={() => {
+                        removeQuantity(item.card_id);
+                    }}>-</Button>
+                  </React.Fragment>
+                );
+              })
+            : "Cart doesn't exist because user is not logged in, please log in!"}
+        </div>
+          <Button variant="success" href={URL}>Checkout</Button>
+      </Container>
     </React.Fragment>
   );
 }

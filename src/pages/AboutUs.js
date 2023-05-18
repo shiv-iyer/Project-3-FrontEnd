@@ -4,7 +4,8 @@ import React from 'react';
 export default function AboutUs() {
     return (
         <React.Fragment>
-            <h1>About Us (Aboot if Canadian)</h1>
+            <h1>About Us</h1>
+            <h2>work in progress</h2>
         </React.Fragment>
     )
 }
