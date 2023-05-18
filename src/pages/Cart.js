@@ -46,6 +46,12 @@ export default function Cart() {
     getUserID();
   }, [context]);
 
+  let URL;
+
+  if (userID) {
+    URL = `https://3000-shiviyer-project3backen-yor58kqud3j.ws-us97.gitpod.io/checkout/${userID}/checkout`
+  }
+
   // remove from cart
   const removeFromCart = async (cardID) => {
     // data required for the post request
@@ -62,11 +68,12 @@ export default function Cart() {
 
   // add and subtract from cart
   const addQuantity = async (cardID) => {
+    let newData;
     if (userID) {
         // get the card and filter to ensure that the card matches the card in cart items
     const cardToUpdate = cartItems.filter((item) => item.card_id === cardID);
     // map each cart item and retrieve the correct card, so that the quantity can be updated
-    const newData = cartItems.map((item) => {
+     newData = cartItems.map((item) => {
       if (item.card_id === cardID) {
         return {
           ...item,
@@ -91,10 +98,11 @@ export default function Cart() {
   };
 
 const removeQuantity = async (cardID) => {
+  let newData;
     // get the card and filter to ensure that the card matches the card in cart items
     const cardToUpdate = cartItems.filter((item) => item.card_id === cardID);
     // map each cart item and retrieve the correct card, so that the quantity can be updated
-    const newData = cartItems.map((item) => {
+     newData = cartItems.map((item) => {
       if (item.card_id === cardID) {
         return {
           ...item,
@@ -144,6 +152,7 @@ const removeQuantity = async (cardID) => {
             );
           })
         : "bye"}
+        <Button variant="success" href={URL}>Checkout</Button>
     </React.Fragment>
   );
 }
