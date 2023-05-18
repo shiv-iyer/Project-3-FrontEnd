@@ -15,6 +15,8 @@ export default function Cards() {
 
     // save the cards in the state. will come as array of objects
     const [cards, setCards] = useState([]);
+    // set cards into a new state solely for the purpose of calling a new render to search on frontend
+    const [displayedCards, setDisplayedCards] = useState([]);
 
     const [filter, setFilter] = useState({
         search: "",
@@ -25,7 +27,27 @@ export default function Cards() {
             ...filter,
             [e.target.name] : e.target.value
         });
-    }
+    };
+
+    // function for button
+    const applyFilter = () => {
+        alert("Searching for cards!");
+        if (filter.search) {
+            // create new regex expression to search by user input and case insensitive
+            const regex = new RegExp(filter.search, "i");
+            // filtering cards that return true to match the regex expression
+            const cardsToDisplay = cards.filter(card => regex.test(card.name));
+            // setting displayed cards to new state
+            setDisplayedCards(cardsToDisplay);
+        }
+    };
+
+    // to clear the state and set it back to the original state
+    const resetFilter = () => {
+        alert("Clearing search and resetting back to normal!");
+        setDisplayedCards(cards);
+    };
+
 
     // get the context?
     let context = useContext(CardContext);
@@ -38,6 +60,7 @@ export default function Cards() {
             const allCards = await context.getCards();
             console.log("🚀 ~ file: Cards.js:23 ~ getAllCards ~ allCards:", allCards)
             setCards(allCards);
+            setDisplayedCards(allCards)
         }
         // useEffect also calls the function in the same instance
         getAllCards();
@@ -50,13 +73,13 @@ export default function Cards() {
             {/* search bar for filter. 1. input type = search, 2. button to apply search, 3. button to clear search */}
             <div className="search-container">
                 <input type="text" value={filter.search} onChange={updateFormField} name="search"/>
-                <Button>Search</Button>
-                <Button variant="danger">Clear</Button>
+                <Button onClick={applyFilter}>Search</Button>
+                <Button variant="danger" onClick={resetFilter}>Clear</Button>
             </div>
 
             {/*  grid to support the map from outside. jsx comments here, anything outside of React.Fragment can be // comments */}
             <Grid container spacing={2}>
-                {cards && Object.keys(cards).length > 0 ? cards.map((c, index) => {
+                {cards && Object.keys(cards).length > 0 ? displayedCards.map((c, index) => {
                         {/* Grid without Grid Items is all clumped together. Grid items to separate each indivudal one */}
                         return (
                             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
