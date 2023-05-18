@@ -7,11 +7,14 @@ import UserContext from "../contexts/UserContext";
 
 import { Button } from "react-bootstrap";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Cart() {
   const [userID, setUserID] = useState();
   const [cartItems, setCartItems] = useState([]);
 
   const context = useContext(UserContext);
+  const navigate = useNavigate();
 
   // componentDidMount equivalent to get cart items from the user
 
@@ -59,7 +62,8 @@ export default function Cart() {
 
   // add and subtract from cart
   const addQuantity = async (cardID) => {
-    // get the card and filter to ensure that the card matches the card in cart items
+    if (userID) {
+        // get the card and filter to ensure that the card matches the card in cart items
     const cardToUpdate = cartItems.filter((item) => item.card_id === cardID);
     // map each cart item and retrieve the correct card, so that the quantity can be updated
     const newData = cartItems.map((item) => {
@@ -80,6 +84,10 @@ export default function Cart() {
 
     const newCart = await context.getCart(userID);
     setCartItems(newCart);
+    } else {
+      alert("You have to log in to add to cart");
+      navigate("/login")
+    }
   };
 
 const removeQuantity = async (cardID) => {

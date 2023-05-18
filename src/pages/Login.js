@@ -1,4 +1,5 @@
 import React, {useState, useContext} from "react";
+import { useNavigate } from "react-router-dom";
 
 import {Button} from "react-bootstrap";
 
@@ -12,6 +13,7 @@ import UserContext from "../contexts/UserContext";
 export default function Login() {
 
     const context = useContext(UserContext);
+    const navigate = useNavigate();
 
     // massive state by wrapping an object within useState
     const [formState, setFormState] = useState({
@@ -30,11 +32,25 @@ export default function Login() {
 
     // function to submit and post the request via context
     const submitForm = async () => {
-        alert("you have logged in hf");
-        console.log(formState);
-        const response = await context.userLogin(formState);
-        // const response = await axios.post(`${BASE_URL}/users/login`, formState);
-        console.log(response);
+        // empty string is falsy
+        if (formState.email && formState.password){
+  
+                console.log(formState);
+                const response = await context.userLogin(formState);
+                // after get the response, validate based on the response sent from json in the backend
+                if (response.error !== "Wrong email or password"){
+                    localStorage.setItem("accessToken", response.accessToken);
+                    localStorage.setItem("refreshToken", response.refreshToken);
+                    alert("you have logged in hf");
+                    navigate("/profile")
+                } else {
+                    alert(response.error);
+                }
+                console.log(response);
+        } else {
+            alert("Please fill in all fields");
+        }
+        
     };
 
     return (

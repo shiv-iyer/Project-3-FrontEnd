@@ -4,7 +4,8 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 
 // hooks
-import {useContext, useState} from "react";
+import {useContext, useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 
 // jwtdecode
 import jwtDecode from "jwt-decode";
@@ -56,6 +57,7 @@ export default function PokeCards(props) {
 
   // context
   const context = useContext(CardContext);
+  const navigate = useNavigate();
 
   // state for user
   const [userID, setUserID] = useState("");
@@ -64,27 +66,45 @@ export default function PokeCards(props) {
     setExpanded(!expanded);
   };
 
-  const addToCart = async (cardName) => {
-    alert("Card " + cardName + " has been added to your shopping cart!");
-    console.log(pokedata);
+  useEffect(() => {
+    async function getUserID() {
+      const token = localStorage.getItem("accessToken");
 
-    // retrieve token from local storage
-    const token = localStorage.getItem("accessToken");
-
-    if (token){
-      // decode the token if it's there
-      setUserID(jwtDecode(token).id);
+      // if token exists
+      if (token) {
+        // set user id to
+        setUserID(jwtDecode(token).id);
+      }
     }
+    getUserID();
+  }, [context]);
+
+  const addToCart = async (cardName) => {
+    // retrieve token from local storage
 
     // match the data to req.body in backend
-    const data = {
-      userID: userID,
-      cardID: pokedata.id,
-      quantity: 1
+    console.log(userID);
+    // check if token not if user id right now, if need to improve later, retireve user details from token and stuff
+    // nvm about that comment
+    
+    if (userID) {
+      alert("Card " + cardName + " has been added to your shopping cart!");
+      console.log(pokedata);
+  
+      const data = {
+        userID: userID,
+        cardID: pokedata.id,
+        quantity: 1
+      }
+
+        // api call at the end of the if 
+        const response = await context.addCardToCart(data);
+        console.log(response);
+    } else {
+      alert("Please login first!")
+      navigate("/login")
     }
 
-    // api call
-    const response = await context.addCardToCart(data);
   };
 
   return (

@@ -17,15 +17,6 @@ export default function UserProvider(props) {
 
             const response = await axios.post(`${BASE_URL}/users/login`, userData);
             // the forbidden third header in axios.post
-
-            // localstorage is part of javascript
-            if (response !== "Invalid email or password.") {
-                localStorage.setItem("accessToken", response.data.accessToken);
-                localStorage.setItem("refreshToken", response.data.refreshToken);
-            }
-
-            console.log(localStorage);
-
             return response.data;
         },
 

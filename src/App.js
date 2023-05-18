@@ -4,6 +4,10 @@ import "./App.css";
 // bootstrap
 import "bootstrap/dist/css/bootstrap.css";
 
+// new meta imports
+import {useState, useEffect} from "react";
+import jwtDecode from "jwt-decode";
+
 // react-router-dom; we import BrowserRouter but we name it 'Router'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -27,6 +31,32 @@ import CardProvider from "./providers/CardProvider";
 import UserProvider from "./providers/UserProvider";
 
 function App() {
+
+  // define the state
+  const [userID, setUserID] = useState({});
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+
+    if (token) {
+      setUserID(jwtDecode(token).id);
+    }
+  }, []);
+  
+
+  // refer to fun fact below
+
+  // no async bc logout is related to local storage and not the database
+
+  // no need to use blacklisted tokens for now
+  // const logout = () => {
+  //   alert("User has clicked logout button");
+  //   localStorage.removeItem("refreshToken");
+  //   localStorage.removeItem('accessToken');
+  //   navigate("/login");
+  // }
+
+  // fun fact: navigate has to be in a router it can't be in app.js
+
   return (
     <Router>
       {/* UserProvider to encompass every component so that they can all access user data */}
@@ -59,9 +89,16 @@ function App() {
                 <Link className="nav-link" to="/contact-us">
                   Contact Us
                 </Link>
-                <Link className="nav-link" to="/login">
-                  <Button>Login</Button>
-                </Link>
+                {/* when the rendering is conditional */}
+                {userID && userID !== undefined ? 
+                               <Link className="nav-link" to="/logout">
+                               <Button>Logout</Button>
+                             </Link>
+                 :
+                              <Link className="nav-link" to="/login">
+                              <Button>Login</Button>
+                            </Link>
+                }
                 <Link className="nav-link" to="/register">
                   <Button>Register</Button>
                 </Link>
