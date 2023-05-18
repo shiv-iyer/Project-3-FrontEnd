@@ -1,5 +1,4 @@
 # Poké Port
-![Mobile-Responsive Mockup image](src/assets/resources/mockup.png)
 
 Live link to demo: [Poké Port](https://poke-port.netlify.app/)
 
