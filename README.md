@@ -80,4 +80,7 @@ Some possible features I would like to implement in the future are:
 
 ## Credits and Acknowledgment
 
+- Bulbapedia, TCGPlayer, and other related websites for Pokémon card information and artwork
+- [Poke Ball Icon](https://en.wikipedia.org/wiki/File:Pok%C3%A9_Ball_icon.svg)
+
 Thank you so much to my lecturer, Paul, my friend, Isaac, as well as my classmates for help, guidance and support throughout this project.
