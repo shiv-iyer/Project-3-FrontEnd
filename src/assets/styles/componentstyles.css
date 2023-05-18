@@ -42,3 +42,36 @@
 .search-item:hover {
     transform: scale(1.08);
 }
+
+#main-navbar {
+    border-top: 5px solid #000000 ; /* Red bottom border for a pop of color */
+    background-color: #FF0000; /* Black background for the navbar */
+    border-bottom: 5px solid #000000 ; /* Red bottom border for a pop of color */
+    padding: 0.3rem 0 !important; /* Smaller padding to make the navbar smaller */
+}
+
+/* right now */
+
+.nav-link {
+    color: #FFFFFF; /* White color text to stand out on the red background */
+    background-color: #000000; /* Black background */
+    border: 2px solid #FFFFFF; /* White border */
+    border-radius: 5px; /* Optional: Gives the link a slight roundness */
+    padding: 5px 10px; /* Padding around the text */
+    margin: 0 5px; /* Spacing between each link */
+    transition: background-color 0.3s ease; /* Transition effect for hover */
+}
+
+.nav-link:hover {
+    background-color: #FFFFFF; /* Changes the background color to white on hover */
+    color: #000000; /* Changes the text color to black on hover */
+}
+
+.myBtns {
+    background-color: #000000;
+}
+
+.pleaseBeDone {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

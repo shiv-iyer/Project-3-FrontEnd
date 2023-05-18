@@ -65,11 +65,9 @@ Some possible features I would like to implement in the future are:
 
 ## Deployment
 
-### Front-End
-The web application is hosted on and was deployed through [Netlify](https://www.netlify.com/), directly from this GitHub repository.
+- **FrontEnd**: The web application is hosted on and was deployed through [Netlify](https://www.netlify.com/), directly from this GitHub repository.
 
-### Back-End
-The Express server is hosted on and was deployed through [Render](https://render.com/), directly from the main branch of [this GitHub repository](https://github.com/shiv-iyer/Project-3-BackEnd).
+- **BackEnd**: The Express server is hosted on and was deployed through [Render](https://render.com/), directly from the main branch of [this GitHub repository](https://github.com/shiv-iyer/Project-3-BackEnd).
 
 ---
 

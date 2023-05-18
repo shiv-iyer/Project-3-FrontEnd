@@ -68,7 +68,7 @@ function App() {
         {/* NavBar in Router above Routes: this way, it will remain when different routes are switched between */}
         {/* Create the NavBar for the homepage, expand in full size at the md breakpoint and onwards */}
         <Navbar expand="md" id="main-navbar">
-          <Container>
+          <Container className="pleaseBeDone">
             {/* Navbar.Brand is the main element in the navbar */}
             <Navbar.Brand href="#home" className="brand">
               PokéPort
@@ -96,21 +96,21 @@ function App() {
                 {/* when the rendering is conditional */}
                 {userID && userID !== undefined ? 
                                <Link className="nav-link" to="/logout">
-                               <Button>Logout</Button>
+                               <Button className="myBtns">Logout</Button>
                              </Link>
                  :
                               <Link className="nav-link" to="/login">
-                              <Button>Login</Button>
+                              <Button className="myBtns">Login</Button>
                             </Link>
                 }
                 <Link className="nav-link" to="/register">
-                  <Button>Register</Button>
+                  <Button className="myBtns">Register</Button>
                 </Link>
                 <Link className="nav-link" to="/profile">
-                  <Button>Profile</Button>
+                  <Button className="myBtns">Profile</Button>
                 </Link>
                 <Link className="nav-link" to="/cart">
-                  <Button>Cart</Button>
+                  <Button className="myBtns">Cart</Button>
                 </Link>
               </Nav>
             </Navbar.Collapse>
