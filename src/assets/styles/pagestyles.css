@@ -34,3 +34,22 @@
     text-align: center;
     text-decoration: underline;
 }
+
+.welcome-container {
+    height: 90vh;
+    background-image: url('../resources/images/pmd-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0.5px dotted black;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text:hover {
+    transform: scale(1.17);
+    text-decoration-line: underline;
+    transition: all 0.3s ease-in-out;
+}
