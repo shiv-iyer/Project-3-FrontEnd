@@ -59,7 +59,7 @@ export default function Profile() {
                         <td>{order.payment_type}</td>
                     </tr>
                 );
-            }) : "hi"}
+            }) : "There are no available orders to display."}
         </tbody>
       </table>
     </React.Fragment>
