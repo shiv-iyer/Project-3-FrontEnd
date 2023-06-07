@@ -11,6 +11,8 @@ import {Button} from "react-bootstrap";
 // need to use grid here... using grid in PokeCards was not working since the data was already mapped over
 import Grid from "@mui/material/Grid";
 
+import { Typography } from '@mui/material';
+
 export default function Cards() {
 
     // save the cards in the state. will come as array of objects
@@ -71,6 +73,7 @@ export default function Cards() {
         <React.Fragment>
 
             {/* search bar for filter. 1. input type = search, 2. button to apply search, 3. button to clear search */}
+            <Typography variant="h6" className="search-label">Search for Cards</Typography>
             <div className="search-container">
                 <input type="text" value={filter.search} onChange={updateFormField} name="search" className="search-item"/>
                 <Button onClick={applyFilter} className="search-item">Search</Button>
