@@ -6,7 +6,7 @@ import { BASE_URL } from "../constants/Constant";
 import CardContext from "../contexts/CardContext";
 import PokeCards from "../components/PokeCard";
 
-import {Button} from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 
 // need to use grid here... using grid in PokeCards was not working since the data was already mapped over
 import Grid from "@mui/material/Grid";
@@ -22,6 +22,7 @@ export default function Cards() {
 
     const [filter, setFilter] = useState({
         search: "",
+        condition: "",
     });
 
     const updateFormField = (e) => {
@@ -34,11 +35,15 @@ export default function Cards() {
     // function for button
     const applyFilter = () => {
         alert("Searching for cards!");
-        if (filter.search) {
+        if (filter.search || filter.condition) {
             // create new regex expression to search by user input and case insensitive
             const regex = new RegExp(filter.search, "i");
             // filtering cards that return true to match the regex expression
-            const cardsToDisplay = cards.filter(card => regex.test(card.name));
+            // const cardsToDisplay = cards.filter(card => regex.test(card.name));
+            const cardsToDisplay = cards.filter(card => 
+                regex.test(card.name) && 
+                (!filter.condition || card.condition === filter.condition)
+            );
             // setting displayed cards to new state
             setDisplayedCards(cardsToDisplay);
         }
@@ -74,11 +79,30 @@ export default function Cards() {
 
             {/* search bar for filter. 1. input type = search, 2. button to apply search, 3. button to clear search */}
             <Typography variant="h6" className="search-label">Search for Cards</Typography>
-            <div className="search-container">
-                <input type="text" value={filter.search} onChange={updateFormField} name="search" className="search-item"/>
-                <Button onClick={applyFilter} className="search-item">Search</Button>
-                <Button variant="danger" onClick={resetFilter} className="search-item">Clear</Button>
-            </div>
+            <Container>
+                <div className="search-container">
+                    <div>
+                        <label for="search">Card Name:</label>
+                        <input type="text" value={filter.search} onChange={updateFormField} name="search" id="search" className="search-item"/>
+                    </div>
+                    <div>
+                        <label for="condition">Card Condition:</label>
+                        {/* <input type="text" value={filter.condition} onChange={updateFormField} name="condition" className="search-item"/> */}
+                        <select name="condition" id="condition" onChange={updateFormField} className="search-item">
+                            <option value="">Any</option>
+                            <option value="Mint">Mint</option>
+                            <option value="Near Mint">Near Mint</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Light Played">Light Played</option>
+                            <option value="Played">Played</option>
+                            <option value="Poor">Poor</option>
+                        </select>
+                    </div>
+                    <Button onClick={applyFilter} className="search-item">Search</Button>
+                    <Button variant="danger" onClick={resetFilter} className="search-item">Clear</Button>
+                </div>
+            </Container>
 
             {/*  grid to support the map from outside. jsx comments here, anything outside of React.Fragment can be // comments */}
             <Grid container spacing={2}>
