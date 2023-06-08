@@ -41,7 +41,7 @@ export default function Login() {
                 if (response.error !== "Wrong email or password"){
                     localStorage.setItem("accessToken", response.accessToken);
                     localStorage.setItem("refreshToken", response.refreshToken);
-                    alert("you have logged in hf");
+                    alert("You have successfully logged in!");
                     navigate("/profile")
                 } else {
                     alert(response.error);
