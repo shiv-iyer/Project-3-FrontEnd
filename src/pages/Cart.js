@@ -134,7 +134,8 @@ const removeQuantity = async (cardID) => {
                 return (
                   <React.Fragment key={item.card_id}>
                     <h3>Name: {item.card.name}</h3>
-                    <h3>Price: </h3>
+                    <h3>Price: ${item.card.cost}</h3>
+                    <img src={item.card.thumbnail_url}/>
                     <Button
                       onClick={() => {
                         console.log(item);
