@@ -133,9 +133,11 @@ const removeQuantity = async (cardID) => {
             ? cartItems.map((item) => {
                 return (
                   <React.Fragment key={item.card_id}>
-                    <h1>Name: {item.card.name}</h1>
+                    <h3>Name: {item.card.name}</h3>
+                    <h3>Price: </h3>
                     <Button
                       onClick={() => {
+                        console.log(item);
                         removeFromCart(item.card_id);
                       }}
                     >
