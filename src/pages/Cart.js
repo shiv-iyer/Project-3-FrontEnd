@@ -132,8 +132,8 @@ const removeQuantity = async (cardID) => {
           {cartItems && cartItems.length > 0
             ? cartItems.map((item) => {
                 return (
-                  <React.Fragment key={item.card_id}>
-                    <div>
+                  <React.Fragment key={item.card_id} className="py-3">
+                    <div className="mb-3">
                       <h4>Name: {item.card.name}</h4>
                       <h4>Price: ${item.card.cost}</h4>
                       <img src={item.card.thumbnail_url}/>
