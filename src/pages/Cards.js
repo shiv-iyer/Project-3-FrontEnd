@@ -23,6 +23,7 @@ export default function Cards() {
     const [filter, setFilter] = useState({
         search: "",
         condition: "",
+        rarity: "",
     });
 
     const updateFormField = (e) => {
@@ -35,14 +36,15 @@ export default function Cards() {
     // function for button
     const applyFilter = () => {
         alert("Searching for cards!");
-        if (filter.search || filter.condition) {
+        if (filter.search || filter.condition || filter.rarity) {
             // create new regex expression to search by user input and case insensitive
             const regex = new RegExp(filter.search, "i");
             // filtering cards that return true to match the regex expression
             // const cardsToDisplay = cards.filter(card => regex.test(card.name));
             const cardsToDisplay = cards.filter(card => 
                 regex.test(card.name) && 
-                (!filter.condition || card.condition === filter.condition)
+                (!filter.condition || card.condition === filter.condition) &&
+                (!filter.rarity || card.rarity === filter.rarity)
             );
             // setting displayed cards to new state
             setDisplayedCards(cardsToDisplay);
@@ -87,7 +89,6 @@ export default function Cards() {
                     </div>
                     <div>
                         <label for="condition">Card Condition:</label>
-                        {/* <input type="text" value={filter.condition} onChange={updateFormField} name="condition" className="search-item"/> */}
                         <select name="condition" id="condition" onChange={updateFormField} className="search-item">
                             <option value="">Any</option>
                             <option value="Mint">Mint</option>
@@ -97,6 +98,22 @@ export default function Cards() {
                             <option value="Light Played">Light Played</option>
                             <option value="Played">Played</option>
                             <option value="Poor">Poor</option>
+                        </select>
+                    </div>
+                    <div>
+                    <label for="rarity">Card Rarity:</label>
+                        <select name="rarity" id="rarity" onChange={updateFormField} className="search-item">
+                            <option value="">Any</option>
+                            <option value="Common">Common</option>
+                            <option value="Uncommon">Uncommon</option>
+                            <option value="Rare">Rare</option>
+                            <option value="Holo Rare">Holo Rare</option>
+                            <option value="Reverse Holo">Reverse Holo</option>
+                            <option value="Played">Half Art</option>
+                            <option value="Poor">Full Art</option>
+                            <option value="Secret Rare">Secret Rare</option>
+                            <option value="Rainbow Rare">Rainbow Rare</option>
+                            <option value="Promo">Promo</option>
                         </select>
                     </div>
                     <Button onClick={applyFilter} className="search-item">Search</Button>
