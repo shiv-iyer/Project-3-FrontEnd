@@ -22,7 +22,13 @@ A seasoned collector is seeking to purchase a highly sought-after limited editio
 
 ## UI/UX Elements
 
-I have tried to style the FrontEnd website to fit the Pokémon (or a Pokéball) theme, being red, black and white.
+I have tried to style the FrontEnd website to fit the Pokémon (or a Pokéball) theme, being red, black and white. These colors and overall design choice are evident through the following:
+— NavBar is Red (#FF0000) and Black (#000000)
+— The home page and general background color for most pages is white (#FFFFFF). Some other colors have been added to accentuate the look of some website elements, such as the forms.
+
+The BackEnd website does not have a Pokémon style, because it is meant to be a generic admin dashboard that can be easily transferrable to work with any type of product, with the only change needing to be made being the database with its tables and columns. I have styled it in my own way.
+
+The fonts used for this project were the default fonts set by the frameworks I used.
 
 My SQL database was meticulously planned for, and the reflection of that planning can be found in my ERD Diagram and Logical Schema diagram.
 
