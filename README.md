@@ -24,7 +24,8 @@ A seasoned collector is seeking to purchase a highly sought-after limited editio
 
 I have tried to style the FrontEnd website to fit the Pokémon (or a Pokéball) theme, being red, black and white. These colors and overall design choice are evident through the following:
 — NavBar is Red (#FF0000) and Black (#000000)
-— The home page and general background color for most pages is white (#FFFFFF). Some other colors have been added to accentuate the look of some website elements, such as the forms.
+— The general background color for most pages is white (#FFFFFF). Some other colors have been added to accentuate the look of some website elements, such as the forms.
+- The home page has an image from Pokémon Mystery Dungeon: Red Rescue Team, one of my favorite Pokémon games of all time.
 
 The BackEnd website does not have a Pokémon style, because it is meant to be a generic admin dashboard that can be easily transferrable to work with any type of product, with the only change needing to be made being the database with its tables and columns. I have styled it in my own way.
 
@@ -43,22 +44,25 @@ My SQL database was meticulously planned for, and the reflection of that plannin
 | ----------- | ----------- |
 | Mobile Responsiveness | The site adapts to various breakpoints with good layout for accessibility on computers and phones. |
 | Database Integration | SQL Database stores all of the data for every detail related to the product — in this case, Pokémon cards. This includes card types, card prices, and card expansions. All user authentication data is accessed from this database as well. |
-| Product Listings | All products in the store are able to be displayed. |
-| Shopping Cart | Items can be added to the shopping cart, and paid for. |
+| Product Listing | All products in the store are able to be displayed, loading in a grid format that adapts to different screen sizes. |
+| Shopping Cart | Items can be added to the shopping cart, and checked out with Stripe. |
 | Secure Payment Gateway | Users can pay knowing they are doing so securely. |
-| Order Tracking with Statuses | There is functionality to allow for orders to be tracked. |
-| Search Functionality | Searching can be done to filter things. |
-| Routing | The website redirects to different URLs to do what it needs to do. |
+| Order Tracking with Statuses | There is functionality to allow for orders to be tracked, with details being displayed on the user's profile. |
+| Search Functionality | Searching can be done to filter products on both the FrontEnd and the BackEnd websites. |
+| Routing | The website redirects to different URLs to render different pages. |
 
 
 ---
 
 ## Limitations and Future Implementations
 
+One issue I have noticed but don't think retracts from the overall purpose of the project is:
+- Certain features on the BackEnd are not present (ex. more search engines, more database columns displayed). The website's purpose of presenting as an implementation of the ecommerce concept is still very evident.
+
 Some possible features I would like to implement in the future are:
-- Trading system: trade with others
-- Favorites collection: players can save their favorite cards
-- Linkage with any Pokémon APIs
+- Trading system: trade cards with other users, though I feel that this concept isn't realistic for an ecommerce project as there is the buying / selling of a product involved, and it might take away from the ultimate goal of the project.
+- Favorites collection: players can save their favorite cards to a collection stored to their profiles, even if they have not purchased any cards yet.
+- Linkage with any Pokémon APIs, just to better connect the theme with Pokémon.
 
 ---
 
@@ -92,6 +96,7 @@ Some possible features I would like to implement in the future are:
 
 - Bulbapedia, TCGPlayer, and other related websites for Pokémon card information and artwork
 - [Poke Ball Icon](https://en.wikipedia.org/wiki/File:Pok%C3%A9_Ball_icon.svg)
+- [Pokémon Mystery Dungeon Hero Image](https://www.pokemon.com/us)
 - [Chat GPT](https://openai.com/blog/chatgpt): utilized for learning. It is a powerful tool that can accomplish a lot, but I tried not to use it too often.
 
 Thank you so much to my lecturer, Paul, my friend, Isaac, as well as my classmates for help, guidance and support throughout this project.

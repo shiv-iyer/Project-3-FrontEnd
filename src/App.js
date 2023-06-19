@@ -83,9 +83,9 @@ function App() {
                 <Link className="nav-link" to="/cards">
                   Cards
                 </Link>
-                <Link className="nav-link" to="/about-us">
+                {/* don't add in for now, not necessary. <Link className="nav-link" to="/about-us">
                   About Us
-                </Link>
+                </Link> */}
                 {/* not right now, maybe later
                  <Link className="nav-link" to="/contact-us">
                   Contact Us
